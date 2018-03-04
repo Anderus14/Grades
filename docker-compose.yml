@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  grades:
+    image: grades
+    build:
+      context: .\Grades
+      dockerfile: Dockerfile
