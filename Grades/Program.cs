@@ -11,20 +11,27 @@ namespace Grades
         static void Main(string[] args)
         {
             GradeBook g1 = new GradeBook();
-            GradeBook g2 = g1;
+            /*GradeBook g2 = g1;
 
             g1.Name = "Scott's grade book";
-            Console.WriteLine(g2.Name);
-            /* GradeBook book = new GradeBook();
+            Console.WriteLine(g2.Name);*/
+            GradeBook book = new GradeBook();
             book.AddGrade(94);
             book.AddGrade(89.5f);
             book.AddGrade(75);
 
             GradeStatistics stats = book.ComputeStatistics();
-            Console.WriteLine(stats.AverageGrade)6;
-            Console.WriteLine(stats.HighestGrade);
-            Console.WriteLine(stats.LowestGrade);
-            Console.ReadLine(); */
+            WriteResult("Average",stats.AverageGrade);
+            WriteResult("Highest",(int)stats.HighestGrade);
+            WriteResult("Lowest",stats.LowestGrade);
+        }
+        static void WriteResult(string description, int result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+        static void WriteResult(string description, float result)
+        {
+            Console.WriteLine("{0}: {1}", description, result);
         }
     }
 }
